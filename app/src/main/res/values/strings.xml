@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">imajzo</string>
     <string name="title_activity_demo">DemoActivity</string>
+    <string name="animated_visibility">"Animated Visibility"</string>
+    <string name="animate_as_state">Animate As State</string>
+    <string name="animate_content">Animate Content</string>
+    <string name="animate_Content_size">Animate Content Size</string>
+    <string name="cross_fade">Cross fade</string>
+    <string name="update_transition">Update Transition</string>
+    <string name="remember_infinite_transition">Remember Infinite Transition</string>
 </resources>

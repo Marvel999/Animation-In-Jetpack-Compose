@@ -16,6 +16,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import com.wrapx.imajzo.animationscreen.AnimateVisibility
+import com.wrapx.imajzo.animationscreen.StateAnimation
 import com.wrapx.imajzo.ui.theme.ImajzoTheme
 
 class DemoActivity : ComponentActivity() {
@@ -29,11 +30,26 @@ class DemoActivity : ComponentActivity() {
                 ) {
                     val name = intent.getStringExtra("name")
                     when (name) {
-                        "AnimateVisibility" -> {
+                        getString(R.string.animated_visibility) -> {
                             AnimateVisibility()
                         }
-                        "AnimateContent" ->{
-                            AnimateContent()
+                        getString(R.string.animate_as_state) -> {
+                            StateAnimation()
+                        }
+                        getString(R.string.animate_content) -> {
+
+                        }
+                        getString(R.string.animate_Content_size) -> {
+
+                        }
+                        getString(R.string.cross_fade) -> {
+
+                        }
+                        getString(R.string.update_transition) -> {
+
+                        }
+                        getString(R.string.remember_infinite_transition) -> {
+
                         }
                         else -> {
                             Toast.makeText(this, "It is not animation", Toast.LENGTH_LONG).show()
@@ -41,29 +57,6 @@ class DemoActivity : ComponentActivity() {
                     }
                 }
             }
-        }
-    }
-}
-
-
-@Composable
-fun AnimateContent(modifier: Modifier = Modifier) {
-    Column(modifier = modifier.fillMaxSize()) {
-        var isVisible by remember {
-            mutableStateOf(false)
-        }
-
-        Button(onClick = { isVisible = !isVisible }) {
-            Text(text = "Toggle")
-        }
-
-        AnimatedVisibility(visible = isVisible,
-            enter = slideInHorizontally()+ fadeIn(),
-            exit = slideOutHorizontally()+ fadeOut(),
-            modifier = Modifier
-                .fillMaxWidth()
-                .weight(1f)) {
-            Box(modifier = Modifier.background(Color.Red))
         }
     }
 }

@@ -39,16 +39,20 @@ class MainActivity : ComponentActivity() {
         val list = remember {
             mutableStateOf(Data.getListItem())
         }
-        LazyColumn(modifier = Modifier.fillMaxWidth().wrapContentHeight()) {
-            itemsIndexed(list.value) { index, item ->
-                ListItemCard(data = item, onClick = { onClick(item) })
+        LazyColumn(modifier = Modifier
+            .fillMaxWidth()
+            .wrapContentHeight()) {
+            itemsIndexed(list.value) { _, item ->
+                ListItemCard(
+                    animationName = getString(item.animationName),
+                    onClick = { onClick(item) })
             }
         }
     }
 
     private fun onClick(itemData: ListItemData) {
         val intent = Intent(this@MainActivity, DemoActivity::class.java)
-        intent.putExtra("name", itemData.animationName)
+        intent.putExtra("name", getString(itemData.animationName))
         startActivity(intent)
     }
 

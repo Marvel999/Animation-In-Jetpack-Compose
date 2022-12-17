@@ -21,7 +21,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 @Composable
-fun ListItemCard(data: ListItemData, modifier: Modifier = Modifier, onClick: (() -> Unit)? = null ) {
+fun ListItemCard(animationName:String, modifier: Modifier = Modifier, onClick: (() -> Unit)? = null ) {
     Card(
         modifier = Modifier.padding(vertical = 3.dp, horizontal = 8.dp),
         elevation = 1.dp,
@@ -44,7 +44,7 @@ fun ListItemCard(data: ListItemData, modifier: Modifier = Modifier, onClick: (()
 
         ) {
             Text(
-                text = data.animationName,
+                text = animationName,
                 modifier = Modifier.align(Alignment.Center),
                 fontSize = 20.sp,
                 fontFamily = FontFamily.Monospace
@@ -56,5 +56,5 @@ fun ListItemCard(data: ListItemData, modifier: Modifier = Modifier, onClick: (()
 @Preview
 @Composable
 fun ListItemCardPreview(){
-    ListItemCard(data = ListItemData(AnimationType.ANIMATE_VISIBILITY, "Animation1"))
+    ListItemCard(animationName = "Animation1")
 }
