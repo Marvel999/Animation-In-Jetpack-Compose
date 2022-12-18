@@ -15,8 +15,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
-import com.wrapx.imajzo.animationscreen.AnimateVisibility
-import com.wrapx.imajzo.animationscreen.StateAnimation
+import com.wrapx.imajzo.animationscreen.*
 import com.wrapx.imajzo.ui.theme.ImajzoTheme
 
 class DemoActivity : ComponentActivity() {
@@ -37,19 +36,19 @@ class DemoActivity : ComponentActivity() {
                             StateAnimation()
                         }
                         getString(R.string.animate_content) -> {
-
+                            AnimateContent()
                         }
                         getString(R.string.animate_Content_size) -> {
-
+                            AnimateContentSize()
                         }
                         getString(R.string.cross_fade) -> {
-
+                            CrossFadeAnimation()
                         }
                         getString(R.string.update_transition) -> {
-
+                            UpdateTransition()
                         }
                         getString(R.string.remember_infinite_transition) -> {
-
+                            InfiniteAnimation()
                         }
                         else -> {
                             Toast.makeText(this, "It is not animation", Toast.LENGTH_LONG).show()
